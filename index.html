@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Rentyfy App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #dbeafe;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --gray-900: #1e293b;
+            --gray-700: #334155;
+            --gray-600: #475569;
+            --gray-500: #64748b;
+            --gray-400: #94a3b8;
+            --gray-300: #cbd5e1;
+            --gray-200: #e2e8f0;
+            --gray-100: #f1f5f9;
+            --gray-50: #f8fafc;
+            --white: #ffffff;
+            --green: #10b981;
+            --red: #ef4444;
+            --purple: #8b5cf6;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--gray-50);
+            color: var(--gray-700);
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== HEADER / NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--primary);
+        }
+
+        .nav-badge {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding: 140px 24px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+            position: relative;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.8;
+        }
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: var(--gray-500);
+        }
+
+        .meta-item .icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc-section {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+
+        .toc-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .toc-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+
+        .toc-item:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            border-color: rgba(37, 99, 235, 0.1);
+            transform: translateX(4px);
+        }
+
+        .toc-number {
+            width: 28px;
+            height: 28px;
+            background: var(--gray-100);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--gray-500);
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .toc-item:hover .toc-number {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+
+        .main-content {
+            min-width: 0;
+        }
+
+        /* ===== POLICY SECTIONS ===== */
+        .policy-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 24px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            scroll-margin-top: 90px;
+        }
+
+        .policy-section:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            border-color: var(--gray-300);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-number {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        .section-number.green { background: linear-gradient(135deg, var(--green), #059669); box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25); }
+        .section-number.purple { background: linear-gradient(135deg, var(--purple), #7c3aed); box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25); }
+        .section-number.amber { background: linear-gradient(135deg, var(--accent), #d97706); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.25); }
+        .section-number.red { background: linear-gradient(135deg, var(--red), #dc2626); box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25); }
+
+        .section-title-group h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .section-title-group .section-subtitle {
+            font-size: 13px;
+            color: var(--gray-400);
+            font-weight: 500;
+        }
+
+        .policy-section p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.8;
+        }
+
+        .policy-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin: 24px 0 12px;
+        }
+
+        /* ===== DATA LIST ITEMS ===== */
+        .data-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .data-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 14px;
+            color: var(--gray-600);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .data-list li:last-child {
+            border-bottom: none;
+        }
+
+        .data-list li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        /* ===== INFO CARDS ===== */
+        .info-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 14px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .info-card.blue {
+            background: var(--primary-light);
+            border-color: rgba(37, 99, 235, 0.15);
+        }
+
+        .info-card.green {
+            background: #ecfdf5;
+            border-color: rgba(16, 185, 129, 0.15);
+        }
+
+        .info-card.amber {
+            background: #fffbeb;
+            border-color: rgba(245, 158, 11, 0.15);
+        }
+
+        .info-card.red {
+            background: #fef2f2;
+            border-color: rgba(239, 68, 68, 0.15);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-card p {
+            font-size: 14px !important;
+            margin-bottom: 0 !important;
+            color: var(--gray-600);
+        }
+
+        /* ===== RETENTION TABLE ===== */
+        .retention-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+
+        .retention-table th {
+            background: var(--gray-900);
+            color: white;
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .retention-table td {
+            padding: 14px 20px;
+            font-size: 14px;
+            color: var(--gray-600);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .retention-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .retention-table tr:nth-child(even) {
+            background: var(--gray-50);
+        }
+
+        /* ===== RIGHTS GRID ===== */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .right-item {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .right-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .right-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-light);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+
+        .right-item:hover .right-icon {
+            background: var(--primary);
+            color: white;
+        }
+
+        .right-text {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            position: sticky;
+            top: 90px;
+            height: fit-content;
+        }
+
+        .sidebar-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            margin-bottom: 20px;
+        }
+
+        .sidebar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            margin-bottom: 4px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--gray-500);
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav a:hover,
+        .sidebar-nav a.active {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+
+        .sidebar-nav a .nav-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--gray-300);
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+        }
+
+        .sidebar-nav a:hover .nav-dot,
+        .sidebar-nav a.active .nav-dot {
+            background: var(--primary);
+        }
+
+        /* ===== CONTACT CARD ===== */
+        .contact-card {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 20px;
+            padding: 32px;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            font-size: 13px;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.2s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(4px);
+        }
+
+        .contact-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--gray-900);
+            color: var(--gray-400);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: var(--primary);
+        }
+
+        .footer p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 8px;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            margin: 24px auto;
+        }
+
+        .footer-bottom {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(37, 99, 235, 0.45);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .navbar-container {
+                height: 60px;
+            }
+            .logo-text {
+                font-size: 18px;
+            }
+            .nav-badge {
+                display: none;
+            }
+            .hero {
+                padding: 110px 20px 60px;
+            }
+            .hero-meta {
+                gap: 16px;
+            }
+            .toc-card, .policy-section {
+                padding: 24px;
+                border-radius: 16px;
+            }
+            .content-wrapper {
+                padding: 0 16px 60px;
+            }
+            .section-header {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+            .retention-table th,
+            .retention-table td {
+                padding: 10px 14px;
+                font-size: 12px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">R</div>
+                <div class="logo-text">Rent<span>yfy</span></div>
+            </a>
+            <div class="nav-badge">📋 Privacy Policy</div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Updated & Active
+        </div>
+        <h1>Privacy <span>Policy</span></h1>
+        <p class="hero-subtitle">
+            Your privacy matters to us. This document explains how Rentyfy collects, uses, and protects your personal information.
+        </p>
+        <div class="hero-meta">
+            <div class="meta-item">
+                <div class="icon">📅</div>
+                Last Updated: March 18, 2026
+            </div>
+            <div class="meta-item">
+                <div class="icon">🇮🇳</div>
+                Compliant with Indian IT Act & DPDP Act 2023
+            </div>
+            <div class="meta-item">
+                <div class="icon">✅</div>
+                Google Play Compliant
+            </div>
+        </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="toc-section fade-in">
+        <div class="toc-card">
+            <div class="toc-title">
+                📑 Table of Contents
+            </div>
+            <div class="toc-grid">
+                <a href="#section1" class="toc-item">
+                    <span class="toc-number">01</span>
+                    Introduction
+                </a>
+                <a href="#section2" class="toc-item">
+                    <span class="toc-number">02</span>
+                    Information We Collect
+                </a>
+                <a href="#section3" class="toc-item">
+                    <span class="toc-number">03</span>
+                    How We Use Your Information
+                </a>
+                <a href="#section4" class="toc-item">
+                    <span class="toc-number">04</span>
+                    Sharing of Information
+                </a>
+                <a href="#section5" class="toc-item">
+                    <span class="toc-number">05</span>
+                    Location Data
+                </a>
+                <a href="#section6" class="toc-item">
+                    <span class="toc-number">06</span>
+                    Data Retention
+                </a>
+                <a href="#section7" class="toc-item">
+                    <span class="toc-number">07</span>
+                    Your Rights
+                </a>
+                <a href="#section8" class="toc-item">
+                    <span class="toc-number">08</span>
+                    Security
+                </a>
+                <a href="#section9" class="toc-item">
+                    <span class="toc-number">09</span>
+                    Children's Privacy
+                </a>
+                <a href="#section10" class="toc-item">
+                    <span class="toc-number">10</span>
+                    Changes to This Policy
+                </a>
+                <a href="#section11" class="toc-item">
+                    <span class="toc-number">11</span>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-wrapper">
+        <div class="main-content">
+
+            <!-- Section 1: Introduction -->
+            <div class="policy-section fade-in" id="section1">
+                <div class="section-header">
+                    <div class="section-number">01</div>
+                    <div class="section-title-group">
+                        <h2>Introduction</h2>
+                        <span class="section-subtitle">Overview of our commitment</span>
+                    </div>
+                </div>
+                <p>
+                    Rentyfy ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application <strong>"Rentyfy"</strong> (the "App"), available on Google Play Store.
+                </p>
+                <div class="info-card blue">
+                    <div class="info-card-header">
+                        ℹ️ Important
+                    </div>
+                    <p>By using the App, you agree to the collection and use of information in accordance with this policy. If you do not agree, please do not use the App.</p>
+                </div>
+            </div>
+
+            <!-- Section 2: Information We Collect -->
+            <div class="policy-section fade-in" id="section2">
+                <div class="section-header">
+                    <div class="section-number green">02</div>
+                    <div class="section-title-group">
+                        <h2>Information We Collect</h2>
+                        <span class="section-subtitle">What data we gather and how</span>
+                    </div>
+                </div>
+
+                <h3>A. Personal Information You Provide</h3>
+                <ul class="data-list">
+                    <li>Name</li>
+                    <li>Phone number</li>
+                    <li>Email address</li>
+                    <li>Profile photo (optional)</li>
+                    <li>Address / Locality (for property listing or search)</li>
+                    <li>Property details you post (photos, description, price, location etc.)</li>
+                </ul>
+
+                <h3>B. Automatically Collected Information</h3>
+                <ul class="data-list">
+                    <li>Device information (device model, OS version, unique device ID)</li>
+                    <li>IP address</li>
+                    <li>App usage data (pages visited, time spent, clicks)</li>
+                    <li>Location data (only when you allow and use location-based search or posting)</li>
+                </ul>
+
+                <h3>C. Third-Party Services</h3>
+                <div class="info-card">
+                    <div class="info-card-header">🔗 Firebase by Google</div>
+                    <p>We use Google Firebase for authentication, analytics, crash reporting, and cloud storage. Firebase may collect limited device and usage data as per their privacy policy: <a href="https://firebase.google.com/support/privacy" target="_blank" style="color: var(--primary); text-decoration: underline;">firebase.google.com/support/privacy</a></p>
+                </div>
+            </div>
+
+            <!-- Section 3: How We Use Your Information -->
+            <div class="policy-section fade-in" id="section3">
+                <div class="section-header">
+                    <div class="section-number purple">03</div>
+                    <div class="section-title-group">
+                        <h2>How We Use Your Information</h2>
+                        <span class="section-subtitle">Purpose of data collection</span>
+                    </div>
+                </div>
+                <p>We use the collected information to:</p>
+                <ul class="data-list">
+                    <li>Create and manage your account</li>
+                    <li>Allow you to post, search, and view properties</li>
+                    <li>Enable chat/communication between users</li>
+                    <li>Improve app performance and user experience</li>
+                    <li>Send important notifications (inquiries, messages, updates)</li>
+                    <li>Prevent fraud and abuse</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+            </div>
+
+            <!-- Section 4: Sharing of Information -->
+            <div class="policy-section fade-in" id="section4">
+                <div class="section-header">
+                    <div class="section-number amber">04</div>
+                    <div class="section-title-group">
+                        <h2>Sharing of Information</h2>
+                        <span class="section-subtitle">When and with whom we share data</span>
+                    </div>
+                </div>
+
+                <div class="info-card green">
+                    <div class="info-card-header">🛡️ Our Promise</div>
+                    <p><strong>We do not sell your personal information to third parties.</strong></p>
+                </div>
+
+                <p>We may share your information only in these cases:</p>
+                <ul class="data-list">
+                    <li>With other users (your name, phone number, chat messages) when you post a property or send inquiry</li>
+                    <li>With service providers (Firebase, Google Cloud) for hosting and analytics</li>
+                    <li>If required by law, court order, or government request</li>
+                    <li>To protect our rights, safety, or property</li>
+                </ul>
+            </div>
+
+            <!-- Section 5: Location Data -->
+            <div class="policy-section fade-in" id="section5">
+                <div class="section-header">
+                    <div class="section-number">05</div>
+                    <div class="section-title-group">
+                        <h2>Location Data</h2>
+                        <span class="section-subtitle">How we handle location information</span>
+                    </div>
+                </div>
+                <p>
+                    We collect precise location <strong>only when you enable it</strong> for searching nearby properties or posting location-specific listings. You can disable location permission anytime from your device settings.
+                </p>
+                <div class="info-card amber">
+                    <div class="info-card-header">📍 Location Control</div>
+                    <p>You have full control. Go to your device <strong>Settings → Apps → Rentyfy → Permissions</strong> to manage location access at any time.</p>
+                </div>
+            </div>
+
+            <!-- Section 6: Data Retention -->
+            <div class="policy-section fade-in" id="section6">
+                <div class="section-header">
+                    <div class="section-number green">06</div>
+                    <div class="section-title-group">
+                        <h2>Data Retention</h2>
+                        <span class="section-subtitle">How long we keep your data</span>
+                    </div>
+                </div>
+                <p>We keep your data only as long as necessary:</p>
+                <table class="retention-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Retention Period</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Account Data</td>
+                            <td>Until you delete your account</td>
+                        </tr>
+                        <tr>
+                            <td>Posted Properties</td>
+                            <td>Until you delete them or account is deleted</td>
+                        </tr>
+                        <tr>
+                            <td>Chat Messages</td>
+                            <td>90 days after last activity (or as per user deletion)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Section 7: Your Rights -->
+            <div class="policy-section fade-in" id="section7">
+                <div class="section-header">
+                    <div class="section-number purple">07</div>
+                    <div class="section-title-group">
+                        <h2>Your Rights</h2>
+                        <span class="section-subtitle">What you can do with your data</span>
+                    </div>
+                </div>
+                <p>You have the right to:</p>
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <div class="right-icon">👁️</div>
+                        <div class="right-text">Access your personal data</div>
+                    </div>
+                    <div class="right-item">
+                        <div class="right-icon">✏️</div>
+                        <div class="right-text">Correct inaccurate data</div>
+                    </div>
+                    <div class="right-item">
+                        <div class="right-icon">🗑️</div>
+                        <div class="right-text">Delete your account and data</div>
+                    </div>
+                    <div class="right-item">
+                        <div class="right-icon">🚫</div>
+                        <div class="right-text">Withdraw consent for location or notifications</div>
+                    </div>
+                </div>
+                <div class="info-card blue">
+                    <div class="info-card-header">📧 Exercise Your Rights</div>
+                    <p>To exercise these rights, email us at: <a href="mailto:contact.rentyfy@gmail.com" style="color: var(--primary); font-weight: 600;">contact.rentyfy@gmail.com</a></p>
+                </div>
+            </div>
+
+            <!-- Section 8: Security -->
+            <div class="policy-section fade-in" id="section8">
+                <div class="section-header">
+                    <div class="section-number">08</div>
+                    <div class="section-title-group">
+                        <h2>Security</h2>
+                        <span class="section-subtitle">How we protect your data</span>
+                    </div>
+                </div>
+                <p>
+                    We implement reasonable security measures to protect your data, including encryption and secure cloud infrastructure powered by Google Firebase.
+                </p>
+                <div class="info-card amber">
+                    <div class="info-card-header">⚠️ Disclaimer</div>
+                    <p>However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security, but we strive to use commercially acceptable means to protect your personal information.</p>
+                </div>
+            </div>
+
+            <!-- Section 9: Children's Privacy -->
+            <div class="policy-section fade-in" id="section9">
+                <div class="section-header">
+                    <div class="section-number red">09</div>
+                    <div class="section-title-group">
+                        <h2>Children's Privacy</h2>
+                        <span class="section-subtitle">Protection for minors</span>
+                    </div>
+                </div>
+                <p>
+                    Our App is <strong>not intended for children under 13 years of age</strong>. We do not knowingly collect personal data from children under 13.
+                </p>
+                <div class="info-card red">
+                    <div class="info-card-header">🔒 Child Safety</div>
+                    <p>If we discover that we have inadvertently collected data from a child under 13, we will delete that information as quickly as possible. If you believe your child has provided us with personal data, please contact us immediately.</p>
+                </div>
+            </div>
+
+            <!-- Section 10: Changes to This Policy -->
+            <div class="policy-section fade-in" id="section10">
+                <div class="section-header">
+                    <div class="section-number amber">10</div>
+                    <div class="section-title-group">
+                        <h2>Changes to This Policy</h2>
+                        <span class="section-subtitle">How we handle updates</span>
+                    </div>
+                </div>
+                <p>
+                    We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new policy in the App and updating the <strong>"Last Updated"</strong> date at the top of this page.
+                </p>
+                <p>
+                    We encourage you to review this Privacy Policy periodically to stay informed about how we are protecting your information.
+                </p>
+            </div>
+
+            <!-- Section 11: Contact Us -->
+            <div class="policy-section fade-in" id="section11">
+                <div class="section-header">
+                    <div class="section-number green">11</div>
+                    <div class="section-title-group">
+                        <h2>Contact Us</h2>
+                        <span class="section-subtitle">Get in touch with us</span>
+                    </div>
+                </div>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin: 20px 0;">
+                    <a href="mailto:contact.rentyfy@gmail.com" class="contact-item" style="background: var(--primary-light); color: var(--primary); border-radius: 14px; border: 1px solid rgba(37,99,235,0.15);">
+                        <div class="contact-icon" style="background: var(--primary); color: white;">📧</div>
+                        <div>
+                            <div style="font-size: 11px; opacity: 0.7; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Email</div>
+                            <div style="font-weight: 600;">contact.rentyfy@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="tel:+918989297583" class="contact-item" style="background: #ecfdf5; color: #059669; border-radius: 14px; border: 1px solid rgba(16,185,129,0.15);">
+                        <div class="contact-icon" style="background: #10b981; color: white;">📱</div>
+                        <div>
+                            <div style="font-size: 11px; opacity: 0.7; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Phone</div>
+                            <div style="font-weight: 600;">+91 8989297583</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="info-card" style="margin-top: 20px;">
+                    <div class="info-card-header">📌 Address</div>
+                    <p>Gujarat, India</p>
+                </div>
+
+                <div class="info-card blue" style="margin-top: 16px;">
+                    <div class="info-card-header">✅ Acknowledgement</div>
+                    <p>By using Rentyfy, you acknowledge that you have read and understood this Privacy Policy.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <div class="sidebar-title">Quick Navigation</div>
+                <nav class="sidebar-nav">
+                    <a href="#section1"><span class="nav-dot"></span> Introduction</a>
+                    <a href="#section2"><span class="nav-dot"></span> Information We Collect</a>
+                    <a href="#section3"><span class="nav-dot"></span> How We Use Info</a>
+                    <a href="#section4"><span class="nav-dot"></span> Sharing of Info</a>
+                    <a href="#section5"><span class="nav-dot"></span> Location Data</a>
+                    <a href="#section6"><span class="nav-dot"></span> Data Retention</a>
+                    <a href="#section7"><span class="nav-dot"></span> Your Rights</a>
+                    <a href="#section8"><span class="nav-dot"></span> Security</a>
+                    <a href="#section9"><span class="nav-dot"></span> Children's Privacy</a>
+                    <a href="#section10"><span class="nav-dot"></span> Policy Changes</a>
+                    <a href="#section11"><span class="nav-dot"></span> Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="contact-card">
+                <h3>Need Help? 🤝</h3>
+                <p>Have questions about your privacy? We're here to help.</p>
+                <a href="mailto:contact.rentyfy@gmail.com" class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    contact.rentyfy@gmail.com
+                </a>
+                <a href="tel:+918989297583" class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    +91 8989297583
+                </a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Rent<span>yfy</span></div>
+            <p>Find your perfect rental property with ease.</p>
+            <div class="footer-divider"></div>
+            <p>📧 contact.rentyfy@gmail.com &nbsp;|&nbsp; 📱 +91 8989297583</p>
+            <p style="margin-top: 16px;">Gujarat, India</p>
+            <div class="footer-divider"></div>
+            <p class="footer-bottom">© 2026 Rentyfy. All rights reserved. | This privacy policy is effective as of March 18, 2026.</p>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Fade in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Active sidebar link
+        const sections = document.querySelectorAll('.policy-section');
+        const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
